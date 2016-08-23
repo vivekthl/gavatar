@@ -1,0 +1,75 @@
+<html>
+<head>  
+  <title>Color Page</title>
+  <link rel="stylesheet" 
+        type="text/css"
+        href="styles/styles.css">
+ 
+        <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"> 
+</head>
+<body onload="init()" onclick="onBodyClick()">
+  <div class="textContainer">
+    <input type="text" 
+           value="" 
+           class="textBox" 
+           id="textBox"
+           maxlength="6"
+           onkeyup="changeColor()" />
+  </div>
+</body>
+
+
+<script type="text/javascript">
+    
+  function init()
+  {
+      document.body.style.backgroundColor = "black";
+
+      var textBox = document.getElementById("textBox");
+      textBox.value = "000000";
+      textBox.style.backgroundColor = document.body.style.backgroundColor;
+
+      textBox.focus();
+
+      /*Setting cursor at end */
+      textBox.selectionStart = textBox.value.length;
+      textBox.selectionLength = 0;
+  }
+
+  function onBodyClick()
+  {
+      var textBox = document.getElementById("textBox");
+      textBox.focus();
+  }
+
+  function rgb2hex(rgbString)
+  {
+      matchedIntegerList = rgbString.match(/\d+/gi);
+      hexNumber = parseInt(matchedIntegerList[0]).toString(16) +
+          parseInt(matchedIntegerList[1]).toString(16) +
+          parseInt(matchedIntegerList[2]).toString(16);
+      return hexNumber;
+  }
+
+  var textBoxPreviousValue = "000000";
+  function changeColor() 
+  {
+      var textBox = document.getElementById("textBox");
+      if(!/^[0-9A-F]*$/i.test(textBox.value)) //Check for valid hexcode
+      {
+          textBox.value = textBoxPreviousValue;
+          return;
+      }
+      textBoxPreviousValue = textBox.value;
+      if(textBox.value.length == 6 || textBox.value.length == 3) //Check for valid color length, 3 and 6 are fine
+      {
+          document.body.style.backgroundColor =  textBox.value;
+          textBox.style.backgroundColor = document.body.style.backgroundColor;
+          textBox.style.color = 
+              Math.abs(16777215-parseInt(
+                  rgb2hex(textBox.style.backgroundColor).substring(1,6), 
+                  16)).toString(16);
+      }
+  }
+</script>
+</html>

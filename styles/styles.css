@@ -1,0 +1,37 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+body
+{
+    font-family:'Open Sans';
+}
+
+.textContainer
+{
+    width: 100px;
+    height: 100px;
+
+
+    position: absolute;
+    top:0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+}
+
+.textBox
+{
+    font-size:28px;
+    color: silver;
+
+    border:0px;
+    position: absolute;
+    width:150px;
+}
+
+input
+{
+    outline:0;
+}
+
+::selection
+{
+    background-color: #FFA;
+}
