@@ -5,8 +5,8 @@ Type six digit hexadecimal color code to change the background color.
 Experiment with numbers to get accidental, sometimes amazing colors.
 
 
-## Comments
-Leave your comments [here]().
+## 
+
 
 
 ## References
