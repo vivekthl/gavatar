@@ -7,3 +7,5 @@ Web app to generate avatars for GitHub.
 ## 
 
 
+## Similar Apps
+[gblocks](https://github.com//gblocks)
