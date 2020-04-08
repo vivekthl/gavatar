@@ -1,11 +1,11 @@
-# Gavatar
+## gavatar
 Web app to generate avatars for GitHub.
 
-## Credits
+### Credits
 * [Boban Spiroski](https://github.com/usb).
 
-## Links
+### Links
 * 
 
-## Similar Apps
+### Similar Apps
 * [gblocks](https://github.com//gblocks)
